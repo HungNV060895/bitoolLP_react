@@ -30,7 +30,10 @@
       "@block/*": ["src/component/block/*"],
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
-      "@types/*": ["src/types/*"]
+      "@types/*": ["src/types/*"],
+      "@helper/*": ["src/helper/*"],
+      "@styles/*": ["src/styles/*"],
+      "@ui/*": ["src/component/ui/*"]
     },
   },
   "include": ["src"]
