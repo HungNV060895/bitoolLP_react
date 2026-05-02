@@ -1,0 +1,14 @@
+@use "vars" as *;
+
+
+.inner {
+	display: block;
+	max-width: calc(1100px + 10%);
+	margin: 0 auto;
+	padding: 0 5%;
+	@include mq(){
+		padding: 0 15px;
+	}
+}
+
+

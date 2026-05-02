@@ -1,0 +1,209 @@
+@use "vars" as *;
+
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 25%, #FFFFFF 100%);
+	z-index: 999;
+	@include flex(between,center,wrap);
+	padding: 17px 41px;
+	@include mq(xl){
+		padding: 17px 15px;
+	}
+	@include mq(tb){
+		padding: 16px 12px;
+	}
+	.header-logo{
+		display: block;
+		width: 161px;
+		position: relative;
+		z-index: 9;
+		@include mq(tb){
+			width: 97px;
+		}
+	}
+	.header-contact{
+		display: block;
+		color: white;
+		@include font-size(14);
+		font-weight: bold;
+		background: $blue;
+		border-radius: 8px;
+		padding: 12px 40px;
+		position: relative;
+		z-index: 9;
+		@include mq(xl){
+			padding: 12px 20px;
+		}
+		@include mq(){
+			border-radius: 4px;
+			padding: 6px 23px;
+		}
+	}
+	.header-nav{
+		@include mq(tb-min){
+			width: calc(100% - 180px);
+			@include flex(end,center,wrap);
+			&__show{
+				margin: 0 6% 0 0;
+				display: block !important;
+				opacity: 1 !important;
+				@include mq(xl){
+					margin: 0 3% 0 0;
+				}
+			}
+		}
+		@include mq(tb){
+			padding: 0 52px 0 0;
+		}
+		&__show{
+			@include mq(tb){
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.3s ease;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 100vh;
+				padding: 90px 40px 0;
+				overflow-y: scroll;
+				background: white;
+				&.active{
+					display: block;
+				}
+			}
+		}
+		&--open{
+			.header-nav__show{
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+		&__menu{
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-end;
+			@include mq(tb){
+				display: block;
+				margin-bottom: 40px;
+			}
+			&-item{
+				position: relative;
+				@include mq(tb-min){
+					&:last-child{
+						a{
+							padding-right: 0;
+						}
+					}
+					&:nth-child(1){
+						a{
+							padding-left: 0;
+						}
+					}
+				}
+				>a{
+					display: block;
+					@include font-size(16);
+					font-weight: 500;
+					color: black;
+					padding: 0 23px;
+					-webkit-text-stroke: .2px black;
+					text-stroke: .2px black;
+					paint-order: stroke;
+					@include mq(xl){
+						padding: 0 10px;
+					}
+					@include mq(){
+						padding: 10px 0;
+					}
+				}
+			}
+		}
+		&__logo{
+			display: none;
+			width: 100%;
+			max-width: 259px;
+			margin: 0 auto;
+			@include mq(tb){
+				display: block;
+			}
+		}
+	}
+	.js-mobile {
+		width: 22px;
+		height: 30px;
+		position: absolute;
+		right: 16px;
+		@include v-align;
+		cursor: pointer;
+		z-index: 12;
+		display: none;
+		@include mq(tb){
+			display: block;
+		}
+		span{
+			position: absolute;
+			@include v-align;
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: black;
+			border-radius: 3px;
+			&:before,&:after{
+				position: absolute;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				background: black;
+				content: '';
+				-webkit-transition: -webkit-transform 0.3s;
+				transition: transform 0.3s;
+				border-radius: 3px;
+			}
+			&:before{
+				-webkit-transform: translateY(-250%);
+				transform: translateY(-250%);
+				top: -4px;
+				width: 28px;
+			}
+			&:after{
+				-webkit-transform: translateY(250%);
+				transform: translateY(250%);
+				bottom: -4px;
+				width: 16px;
+			}
+		}
+		&--close {
+			span{
+				background-color: transparent;
+				&:before,&:after{
+					width: 100%;
+					background: black;
+				}
+				&:before {
+					-webkit-transform: translateY(0) rotate(45deg);
+					transform: translateY(0) rotate(45deg);
+					top: 2px;
+				}
+				&:after {
+					-webkit-transform: translateY(0) rotate(-45deg);
+					transform: translateY(0) rotate(-45deg);
+					bottom: -2px;
+				}
+			}
+		}
+	}
+}
+
+
+.js-locked {
+	overflow: hidden;
+	-ms-touch-action: none;
+	touch-action: none;
+	body {
+		-webkit-overflow-scrolling: auto;
+	}
+}

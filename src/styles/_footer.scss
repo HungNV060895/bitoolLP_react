@@ -1,0 +1,81 @@
+@use "vars" as *;
+
+#footer{
+	background: linear-gradient(90deg, #F4F4F4 0%, #EBEBEB 100%);
+	padding: 81px 0 40px;
+	@include font-size(20);
+	text-align: center;
+	@include mq(){
+		@include font-size(16);
+		padding: 34px 0 60px;
+	}
+	.footer-logo{
+		display: block;
+		width: 163px;
+		margin: 0 auto 30px;
+		@include mq(){
+			margin-bottom: 22px;
+		}
+	}
+	small{
+		display: block;
+		@include font-size(15);
+		padding: 6px 0 0;
+		@include mq(){
+			@include font-size(14);
+			padding: 10px 0 0;
+		}
+	}
+	.copyright{
+		background: $blue;
+		color: white;
+		margin-top: 74px;
+		padding: 20px 15px;
+		@include font-size(12);
+		@include mq(){
+			margin-top: 34px;
+		}
+	}
+}
+
+.try-free{
+	position: fixed;
+	@include v-align;
+	right: 0;
+	border-radius: 4px 0 0 4px;
+	border: 2px solid white;
+	border-right: none;
+	@include font-size(15);
+	color: white;
+	background: $orange;
+	font-weight: bold;
+	text-align: center;
+	padding: 14px 0 50px;
+	z-index: 9;
+	width: 50px;
+	@include mq(){
+		padding: 14px 0 46px;
+		top: 88px;
+		transform: translateY(0);
+		font-size: 1.4rem;
+		width: 47px;
+	}
+	span{
+		width: 100%;
+		@include mode;
+		position: relative;
+		left: -13px;
+	}
+	&:after{
+		content: "";
+		width: 20px;
+		height: 20px;
+		background: url("../img/common/play.png")no-repeat;
+		background-size: 100%;
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+}
