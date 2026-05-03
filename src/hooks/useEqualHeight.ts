@@ -2,22 +2,26 @@ import { useEffect, type RefObject } from 'react';
 
 export function useEqualHeight(
 	containerRef: RefObject<HTMLElement | null>,
-	selector: string,
+	selector: string | string[],
 	deps: unknown[] = []
 ) {
 	useEffect(() => {
 		const setHeight = () => {
-			const items = containerRef.current?.querySelectorAll<HTMLElement>(selector);
-			if (!items || items.length === 0) return;
+			const selectors = Array.isArray(selector) ? selector : [selector];
 
-			// Reset
-			items.forEach((el) => (el.style.height = 'auto'));
+			selectors.forEach((sel) => {
+				const items = containerRef.current?.querySelectorAll<HTMLElement>(sel);
+				if (!items || items.length === 0) return;
 
-			// Tính max
-			const max = Math.max(...Array.from(items).map((el) => el.offsetHeight));
+				// Reset để lấy chiều cao tự nhiên
+				items.forEach((el) => (el.style.height = 'auto'));
 
-			// Áp dụng
-			items.forEach((el) => (el.style.height = `${max}px`));
+				// Tính chiều cao lớn nhất trong nhóm
+				const max = Math.max(...Array.from(items).map((el) => el.offsetHeight));
+
+				// Áp dụng chiều cao lớn nhất cho cả nhóm
+				items.forEach((el) => (el.style.height = `${max}px`));
+			});
 		};
 
 		setHeight();

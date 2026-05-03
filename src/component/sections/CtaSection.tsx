@@ -15,13 +15,13 @@ const CtaSection = () => {
                             </h3>
                             <div className="cta-block__img sp">
                                 <picture>
-                                    <source srcSet="../../assets/img/webp/index/cta-img-sp.webp" type="image/webp" />
-                                    <img src="../../assets/img/index/cta-img-sp.jpg" alt="30日間0円" />
+                                    <source srcSet="../../img/webp/index/cta-img-sp.webp" type="image/webp" />
+                                    <img src="../../img/index/cta-img-sp.jpg" alt="30日間0円" />
                                 </picture>
                                 <div className="cta-block__ct-note">
                                     <picture>
-                                        <source srcSet="../../assets/img/webp/index/cta-note.webp" type="image/webp" />
-                                        <img src="../../assets/img/index/cta-note.png" alt="30日間0円" />
+                                        <source srcSet="../../img/webp/index/cta-note.webp" type="image/webp" />
+                                        <img src="../../img/index/cta-note.png" alt="30日間0円" />
                                     </picture>
                                 </div>
                             </div>
@@ -30,21 +30,21 @@ const CtaSection = () => {
                         </div>
                         <div className="cta-block__ct-sale">
                             <picture>
-                                <source srcSet="../../assets/img/webp/index/note-04.webp" type="image/webp" />
-                                <img src="../../assets/img/index/note-04.png" alt="30日間0円" />
+                                <source srcSet="../../img/webp/index/note-04.webp" type="image/webp" />
+                                <img src="../../img/index/note-04.png" alt="30日間0円" />
                             </picture>
                         </div>
                         <div className="cta-block__ct-note pc">
                             <picture>
-                                <source srcSet="../../assets/img/webp/index/cta-note.webp" type="image/webp" />
-                                <img src="../../assets/img/index/cta-note.png" alt="30日間0円" />
+                                <source srcSet="../../img/webp/index/cta-note.webp" type="image/webp" />
+                                <img src="../../img/index/cta-note.png" alt="30日間0円" />
                             </picture>
                         </div>
                     </div>
                     <div className="cta-block__img pc">
                         <picture>
-                            <source srcSet="../../assets/img/webp/index/cta-img.webp" type="image/webp" />
-                            <img src="../../assets/img/index/cta-img.jpg" alt="30日間0円" />
+                            <source srcSet="../../img/webp/index/cta-img.webp" type="image/webp" />
+                            <img src="../../img/index/cta-img.jpg" alt="30日間0円" />
                         </picture>
                     </div>
                 </div>

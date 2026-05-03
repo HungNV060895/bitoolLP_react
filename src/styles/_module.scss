@@ -6,9 +6,36 @@
 	max-width: calc(1100px + 10%);
 	margin: 0 auto;
 	padding: 0 5%;
-	@include mq(){
+
+	@include mq() {
 		padding: 0 15px;
 	}
 }
 
 
+
+.embla__viewport {
+	overflow: hidden;
+}
+
+.embla__container {
+	display: flex;
+	touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+	flex: 0 0 33.33%;
+	min-width: 0;
+	@include mq{
+		flex: 0 0 100%;
+	}
+}
+
+.custom-dots{
+	display: flex;
+	touch-action: pan-y pinch-zoom;
+	width: 100%;
+	&__item{
+		flex: 0 0 33.33%;
+	}
+}

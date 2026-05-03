@@ -55,13 +55,13 @@ const ConsideringSection = () => {
                         <div ref={containerRef} className="considering-block__ct" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
                             <div className="considering-block__ct-btn considering-block__ct-btn--prev" onClick={goPrev}>
                                 <picture>
-                                    <source srcSet="../../assets/img/webp/common/prev.webp" type="image/webp" />
+                                    <source srcSet="../../img/webp/common/prev.webp" type="image/webp" />
                                     <img src={IMAGES.swiperPrev} alt="prev" />
                                 </picture>
                             </div>
                             <div className="considering-block__ct-btn considering-block__ct-btn--next" onClick={goNext}>
                                 <picture>
-                                    <source srcSet="../../assets/img/webp/common/next.webp" type="image/webp" />
+                                    <source srcSet="../../img/webp/common/next.webp" type="image/webp" />
                                     <img src={IMAGES.swiperNext} alt="next" />
                                 </picture>
                             </div>
@@ -70,10 +70,10 @@ const ConsideringSection = () => {
                                 <p className="mbsp-45">異なる業務システムに蓄積されたデータもData Knowledgeならスムーズに活用可能。<br className="pc" />基幹DBなどの情報を結合し、データを抽出・集計・加工処理を行った結果ファイルを出力できます。</p>
                                 <div className="considering-block__img">
                                     <picture>
-                                        <source srcSet="../../assets/img/webp/index/block-01-sp.webp" media="(max-width:834px)" type="image/webp" />
-                                        <source srcSet="../../assets/img/index/block-01-sp.png" media="(max-width:834px)" />
-                                        <source srcSet="../../assets/img/webp/index/block-01.webp" type="image/webp" />
-                                        <img src="../../assets/img/index/block-01.png" alt="簡単な操作で実現する高度なデータ抽出・加工・出力機能" />
+                                        <source srcSet="../../img/webp/index/block-01-sp.webp" media="(max-width:834px)" type="image/webp" />
+                                        <source srcSet="../../img/index/block-01-sp.png" media="(max-width:834px)" />
+                                        <source srcSet="../../img/webp/index/block-01.webp" type="image/webp" />
+                                        <img src="../../img/index/block-01.png" alt="簡単な操作で実現する高度なデータ抽出・加工・出力機能" />
                                     </picture>
                                 </div>
                             </div>
@@ -88,8 +88,8 @@ const ConsideringSection = () => {
                                         <div className="considering-project__list-item">
                                             <div className="considering-project__list-img">
                                                 <picture>
-                                                    <source srcSet="../../assets/img/webp/index/blok-03-tab1.webp" type="image/webp" />
-                                                    <img src="../../assets/img/index/blok-03-tab1.png" alt="Data Knowledge導入後の業務分担イメージ" />
+                                                    <source srcSet="../../img/webp/index/blok-03-tab1.webp" type="image/webp" />
+                                                    <img src="../../img/index/blok-03-tab1.png" alt="Data Knowledge導入後の業務分担イメージ" />
                                                 </picture>
                                             </div>
                                             <div className="considering-project__list-ct">
@@ -103,8 +103,8 @@ const ConsideringSection = () => {
                                         <div className="considering-project__list-item">
                                             <div className="considering-project__list-img">
                                                 <picture>
-                                                    <source srcSet="../../assets/img/webp/index/blok-03-tab2.webp" type="image/webp" />
-                                                    <img src="../../assets/img/index/blok-03-tab2.png" alt="Data Knowledge導入後の業務分担イメージ" />
+                                                    <source srcSet="../../img/webp/index/blok-03-tab2.webp" type="image/webp" />
+                                                    <img src="../../img/index/blok-03-tab2.png" alt="Data Knowledge導入後の業務分担イメージ" />
                                                 </picture>
                                             </div>
                                             <div className="considering-project__list-ct">
@@ -118,8 +118,8 @@ const ConsideringSection = () => {
                                         <div className="considering-project__list-item">
                                             <div className="considering-project__list-img">
                                                 <picture>
-                                                    <source srcSet="../../assets/img/webp/index/blok-03-tab3.webp" type="image/webp" />
-                                                    <img src="../../assets/img/index/blok-03-tab3.png" alt="Data Knowledge導入後の業務分担イメージ" />
+                                                    <source srcSet="../../img/webp/index/blok-03-tab3.webp" type="image/webp" />
+                                                    <img src="../../img/index/blok-03-tab3.png" alt="Data Knowledge導入後の業務分担イメージ" />
                                                 </picture>
                                             </div>
                                             <div className="considering-project__list-ct">
@@ -133,8 +133,8 @@ const ConsideringSection = () => {
                                     </div>
                                     <div className="considering-project__note">
                                         <picture>
-                                            <source srcSet="../../assets/img/webp/index/block-03-note.webp" type="image/webp" />
-                                            <img src="../../assets/img/index/block-03-note.png" alt="Data Knowledge導入後の業務分担イメージ" />
+                                            <source srcSet="../../img/webp/index/block-03-note.webp" type="image/webp" />
+                                            <img src="../../img/index/block-03-note.png" alt="Data Knowledge導入後の業務分担イメージ" />
                                         </picture>
                                     </div>
                                 </div>

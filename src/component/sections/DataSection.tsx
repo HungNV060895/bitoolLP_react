@@ -1,15 +1,75 @@
 
+import React, { useCallback, useRef, useState, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { type EmblaOptionsType } from "embla-carousel";
+import { useEqualHeight } from "@/hooks/useEqualHeight";
+
+
+type PropType = {
+    slides: number[]
+    options?: EmblaOptionsType,
+    selected: boolean,
+    index: number,
+    onClick: () => void
+}
+
+const DATADOTS = ['現場担当', '総務担当', '情報システム担当'];
+
+const DataSection = (props: PropType) => {
+
+    const { slides, options, selected, index, onClick } = props
+    const [selectedIndex, setSelectedIndex] = useState(0)
+    const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options)
+    const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
+        containScroll: 'keepSnaps',
+        dragFree: true
+    })
+
+    const onThumbClick = useCallback(
+        (index: number) => {
+        if (!emblaMainApi || !emblaThumbsApi) return
+        emblaMainApi.scrollTo(index)
+        },
+        [emblaMainApi, emblaThumbsApi]
+    )
+
+    const onSelect = useCallback(() => {
+        if (!emblaMainApi || !emblaThumbsApi) return
+        setSelectedIndex(emblaMainApi.selectedScrollSnap())
+        emblaThumbsApi.scrollTo(emblaMainApi.selectedScrollSnap())
+    }, [emblaMainApi, emblaThumbsApi, setSelectedIndex])
+
+    useEffect(() => {
+        if (!emblaMainApi) return
+        onSelect()
+
+        emblaMainApi.on('select', onSelect).on('reInit', onSelect)
+    }, [emblaMainApi, onSelect]);
 
 
 
-const DataSection = () => {
+    // const [dataList] = useEmblaCarousel({
+    //     slidesToScroll: 1,
+    //     loop: false,
+    //     breakpoints: {
+    //         '(max-width: 834px)': { axis: 'x' },
+    //     }
+    // });
+
+    // const [dotsList] = useEmblaCarousel({
+    //     slidesToScroll: 3,
+    //     loop: false,
+    // });
+
+    const containerRef = useRef<HTMLDivElement>(null);
+    useEqualHeight(containerRef, ['.data-list__ttl', '.data-list__ct', '.data-list__note']);
     return (
         <>
             <section className="top-data">
                 <div className="inner">
-                    <div className="data-custom">
-                        <div className="data-list js-data-list">
-                            <div className="data-list__item">
+                    <div className="embla__viewport data-custom" ref={emblaMainRef}>
+                        <div ref={containerRef} className="embla__container data-list js-data-list">
+                            <div className="embla__slide data-list__item">
                                 <h3 className="data-list__ttl">
                                     <span>知識がなくても<br />データを活用してみたい！</span>
                                 </h3>
@@ -17,8 +77,8 @@ const DataSection = () => {
                                     <h4 className="data-list__heading-ttl">現場担当</h4>
                                     <div className="data-list__heading-img">
                                         <picture>
-                                            <source srcSet="../../assets/img/webp/index/item-01.webp" type="image/webp" />
-                                            <img src="../../assets/img/index/item-01.png" alt="現場担当" />
+                                            <source srcSet="../../img/webp/index/item-01.webp" type="image/webp" />
+                                            <img src="../../img/index/item-01.png" alt="現場担当" />
                                         </picture>
                                     </div>
                                 </div>
@@ -31,7 +91,7 @@ const DataSection = () => {
                                     <p>●SQLなどの言語は必要なく、<br className="pc" />ノーコードで操作OK。<strong>誰もが使い<br className="pc" />こなせて、パワーユーザーに。</strong></p>
                                 </div>
                             </div>
-                            <div className="data-list__item">
+                            <div className="embla__slide data-list__item">
                                 <h3 className="data-list__ttl">
                                     <span>属人化を解消したい！</span>
                                 </h3>
@@ -39,8 +99,8 @@ const DataSection = () => {
                                     <h4 className="data-list__heading-ttl">総務担当</h4>
                                     <div className="data-list__heading-img">
                                         <picture>
-                                            <source srcSet="../../assets/img/webp/index/item-02.webp" type="image/webp" />
-                                            <img src="../../assets/img/index/item-02.png" alt="総務担当" />
+                                            <source srcSet="../../img/webp/index/item-02.webp" type="image/webp" />
+                                            <img src="../../img/index/item-02.png" alt="総務担当" />
                                         </picture>
                                     </div>
                                 </div>
@@ -53,7 +113,7 @@ const DataSection = () => {
                                     <p>●資料をData Knowledge内で統一する<br className="pc" />ことで<strong>属人化が解消できる。</strong></p>
                                 </div>
                             </div>
-                            <div className="data-list__item">
+                            <div className="embla__slide data-list__item">
                                 <h3 className="data-list__ttl">
                                     <span>セキュリティ対策が心配！</span>
                                 </h3>
@@ -61,8 +121,8 @@ const DataSection = () => {
                                     <h4 className="data-list__heading-ttl">情報システム担当</h4>
                                     <div className="data-list__heading-img">
                                         <picture>
-                                            <source srcSet="../../assets/img/webp/index/item-03.webp" type="image/webp" />
-                                            <img src="../../assets/img/index/item-03.png" alt="情報システム担当" />
+                                            <source srcSet="../../img/webp/index/item-03.webp" type="image/webp" />
+                                            <img src="../../img/index/item-03.png" alt="情報システム担当" />
                                         </picture>
                                     </div>
                                 </div>
@@ -77,11 +137,21 @@ const DataSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <ul className="custom-dots js-custom-dots sp">
-                            <li className="custom-dots__item">現場担当</li>
-                            <li className="custom-dots__item">総務担当</li>
-                            <li className="custom-dots__item">情報システム担当</li>
-                        </ul>
+                        <div className="dots-list" ref={emblaThumbsRef}>
+                            <ul className="custom-dots js-custom-dots sp">
+                                {
+                                    DATADOTS.map((dot, index) => (
+                                        <li
+                                            key={index}
+                                            className={`custom-dots__item embla-thumbs__slide ${index=== selectedIndex ? 'is-active' : ''}`}
+                                            onClick={() => onThumbClick(index)}
+                                        >
+                                            {dot}
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
                     </div>
 
                     <h2 className="data-ttl" >
@@ -95,8 +165,8 @@ const DataSection = () => {
                         </div>
                         <div className="data-block__img">
                             <picture>
-                                <source srcSet="../../assets/img/webp/index/data-img.webp" type="image/webp" />
-                                <img src="../../assets/img/index/data-img.png" alt="スキルを問わず全社員のデータ活用を実現レベルアップをサポート。" />
+                                <source srcSet="../../img/webp/index/data-img.webp" type="image/webp" />
+                                <img src="../../img/index/data-img.png" alt="スキルを問わず全社員のデータ活用を実現レベルアップをサポート。" />
                             </picture>
                         </div>
                     </div>

@@ -14,10 +14,10 @@ const CaseSection = () => {
                         <div className="case-block__heading">
                             <div className="case-block__heading-img">
                                 <picture>
-                                    <source srcSet="../../assets/img/webp/index/item-04-sp.webp" media="(max-width:834px)" type="image/webp" />
-                                    <source srcSet="../../assets/img/index/item-04-sp.png" media="(max-width:834px)" />
-                                    <source srcSet="../../assets/img/webp/index/item-04.webp" type="image/webp" />
-                                    <img src="../../assets/img/index/item-04.png" alt="象印マホービン株式会社様" />
+                                    <source srcSet="../../img/webp/index/item-04-sp.webp" media="(max-width:834px)" type="image/webp" />
+                                    <source srcSet="../../img/index/item-04-sp.png" media="(max-width:834px)" />
+                                    <source srcSet="../../img/webp/index/item-04.webp" type="image/webp" />
+                                    <img src="../../img/index/item-04.png" alt="象印マホービン株式会社様" />
                                 </picture>
                             </div>
                             <div className="case-block__heading-ct">
@@ -27,8 +27,8 @@ const CaseSection = () => {
                                 <h3 className="case-block__heading-ttl">象印マホービン<br className="sp" />株式会社様 <small>調理家電製造・販売</small></h3>
                                 <div className="case-block__heading-box">
                                     <picture>
-                                        <source srcSet="../../assets/img/webp/index/note-02.webp" type="image/webp" />
-                                        <img src="../../assets/img/index/note-02.png" alt="導入の容易さ コストパフォーマンス" />
+                                        <source srcSet="../../img/webp/index/note-02.webp" type="image/webp" />
+                                        <img src="../../img/index/note-02.png" alt="導入の容易さ コストパフォーマンス" />
                                     </picture>
                                 </div>
                                 <h4 className="case-block__heading-note">新基幹システムでのBIツールとして<br className="sp" />Data Knowledgeの導入を決定</h4>
@@ -66,10 +66,10 @@ const CaseSection = () => {
                         <div className="case-block__heading">
                             <div className="case-block__heading-img case-block__heading-img--02">
                                 <picture>
-                                    <source srcSet="../../assets/img/webp/index/item-05-sp.webp" media="(max-width:834px)" type="image/webp" />
-                                    <source srcSet="../../assets/img/index/item-05-sp.png" media="(max-width:834px)" />
-                                    <source srcSet="../../assets/img/webp/index/item-05.webp" type="image/webp" />
-                                    <img src="../../assets/img/index/item-05.png" alt="福助株式会社様" />
+                                    <source srcSet="../../img/webp/index/item-05-sp.webp" media="(max-width:834px)" type="image/webp" />
+                                    <source srcSet="../../img/index/item-05-sp.png" media="(max-width:834px)" />
+                                    <source srcSet="../../img/webp/index/item-05.webp" type="image/webp" />
+                                    <img src="../../img/index/item-05.png" alt="福助株式会社様" />
                                 </picture>
                             </div>
                             <div className="case-block__heading-ct">
@@ -79,8 +79,8 @@ const CaseSection = () => {
                                 <h3 className="case-block__heading-ttl">福助株式会社様 <small>衣料品製造業</small></h3>
                                 <div className="case-block__heading-box">
                                     <picture>
-                                        <source srcSet="../../assets/img/webp/index/note-03.webp" type="image/webp" />
-                                        <img src="../../assets/img/index/note-03.png" alt="属人化の解消 データ活用力向上 業務システムの帳票出力" />
+                                        <source srcSet="../../img/webp/index/note-03.webp" type="image/webp" />
+                                        <img src="../../img/index/note-03.png" alt="属人化の解消 データ活用力向上 業務システムの帳票出力" />
                                     </picture>
                                 </div>
                                 <h4 className="case-block__heading-note">Data Knowledge導入で、3社統合後の管理会計システム構築を早期に実現！</h4>

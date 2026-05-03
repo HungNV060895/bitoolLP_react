@@ -19,8 +19,8 @@ const BenefitSection = () => {
                             <li className="benefit-list__item">
                                 <div className="benefit-list__img">
                                     <picture>
-                                        <source srcSet="../../assets/img/webp/index/benefit-img-01.webp" type="image/webp" />
-                                        <img src="../../assets/img/index/benefit-img-01.png" alt="データに基づく見える化で経営判断が的確に" />
+                                        <source srcSet="../../img/webp/index/benefit-img-01.webp" type="image/webp" />
+                                        <img src="../../img/index/benefit-img-01.png" alt="データに基づく見える化で経営判断が的確に" />
                                     </picture>
                                 </div>
                                 <div className="benefit-list__ct">データに基づく見える化で<br />経営判断が的確に</div>
@@ -28,8 +28,8 @@ const BenefitSection = () => {
                             <li className="benefit-list__item">
                                 <div className="benefit-list__img">
                                     <picture>
-                                        <source srcSet="../../assets/img/webp/index/benefit-img-02.webp" type="image/webp" />
-                                        <img src="../../assets/img/index/benefit-img-02.png" alt="ノウハウ共有機能でレベルが大きくアップ" />
+                                        <source srcSet="../../img/webp/index/benefit-img-02.webp" type="image/webp" />
+                                        <img src="../../img/index/benefit-img-02.png" alt="ノウハウ共有機能でレベルが大きくアップ" />
                                     </picture>
                                 </div>
                                 <div className="benefit-list__ct">
@@ -39,8 +39,8 @@ const BenefitSection = () => {
                             <li className="benefit-list__item">
                                 <div className="benefit-list__img">
                                     <picture>
-                                        <source srcSet="../../assets/img/webp/index/benefit-img-03.webp" type="image/webp" />
-                                        <img src="../../assets/img/index/benefit-img-03.png" alt="顧客ニーズに基づき持続的に機能を開発" />
+                                        <source srcSet="../../img/webp/index/benefit-img-03.webp" type="image/webp" />
+                                        <img src="../../img/index/benefit-img-03.png" alt="顧客ニーズに基づき持続的に機能を開発" />
                                     </picture>
                                 </div>
                                 <div className="benefit-list__ct">顧客ニーズに基づき<br />持続的に機能を開発</div>
@@ -73,8 +73,8 @@ const BenefitSection = () => {
                             </div>
                             <div className="benefit-point__img ">
                                 <picture>
-                                    <source srcSet="../../assets/img/webp/index/point-img-01.webp" type="image/webp" />
-                                    <img src="../../assets/img/index/point-img-01.png" alt="カンタン操作" />
+                                    <source srcSet="../../img/webp/index/point-img-01.webp" type="image/webp" />
+                                    <img src="../../img/index/point-img-01.png" alt="カンタン操作" />
                                 </picture>
                             </div>
                         </li>
@@ -98,8 +98,8 @@ const BenefitSection = () => {
                             </div>
                             <div className="benefit-point__img ">
                                 <picture>
-                                    <source srcSet="../../assets/img/webp/index/point-img-02.webp" type="image/webp" />
-                                    <img src="../../assets/img/index/point-img-02.png" alt="ノウハウ共有" />
+                                    <source srcSet="../../img/webp/index/point-img-02.webp" type="image/webp" />
+                                    <img src="../../img/index/point-img-02.png" alt="ノウハウ共有" />
                                 </picture>
                             </div>
                         </li>
@@ -129,8 +129,8 @@ const BenefitSection = () => {
                             </div>
                             <div className="benefit-point__img ">
                                 <picture>
-                                    <source srcSet="../../assets/img/webp/index/point-img-03.webp" type="image/webp" />
-                                    <img src="../../assets/img/index/point-img-03.png" alt="万全のセキュリティ" />
+                                    <source srcSet="../../img/webp/index/point-img-03.webp" type="image/webp" />
+                                    <img src="../../img/index/point-img-03.png" alt="万全のセキュリティ" />
                                 </picture>
                             </div>
                         </li>
