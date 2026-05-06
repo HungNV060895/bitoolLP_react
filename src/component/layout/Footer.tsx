@@ -1,6 +1,4 @@
 import IMAGES  from '@helper/dataImages';
-
-console.log(IMAGES.logoFooterWebp);
 const Footer = () => {
     return (
         <>

@@ -5,15 +5,16 @@ import TrialBanner from "@component/sections/TrialBanner";
 import AboutSection from "@component/sections/AboutSection";
 import DataSection from "@component/sections/DataSection";
 import BenefitSection from "@component/sections/BenefitSection";
-import ConsideringSection from "@component/sections/ConsideringSection";
 import CaseSection from "@component/sections/CaseSection";
 import PriceSection from "@component/sections/PriceSection";
 import CtaSection from "@component/sections/CtaSection";
 import ContactSection from "@component/sections/ContactSection";
+import UseEfComponent from "@component/useEffect";
 
 function App() {
   return (
     <>
+      <UseEfComponent />
       <Header />
       <main id="page-index" className="wrapper">
         <HeroSection />
@@ -21,7 +22,6 @@ function App() {
         <AboutSection />
         <DataSection />
         <BenefitSection />
-        <ConsideringSection />
         <CaseSection />
         <PriceSection />
         <CtaSection />

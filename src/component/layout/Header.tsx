@@ -8,19 +8,28 @@ interface NavItem {
 	id: number;
 	name: string;
 	href: string;
+	onClick?: () => void;
 }
 
 const NAV_ITEMS: NavItem[] = [
-	{ id: 1, name: 'Data Knowledge とは', href: '#block-01' },
-	{ id: 2, name: '導入効果', href: '#block-02' },
-	{ id: 3, name: '3つのポイント', href: '#block-03' },
-	{ id: 4, name: '導入をご検討の方へ', href: '#block-04' },
-	{ id: 5, name: '導入事例', href: '#block-05' },
-	{ id: 6, name: '価格', href: '#block-06' },
+	{ id: 1, name: 'Data Knowledge とは', href: 'block-01' },
+	{ id: 2, name: '導入効果', href: 'block-02' },
+	{ id: 3, name: '3つのポイント', href: 'block-03' },
+	{ id: 5, name: '導入事例', href: 'block-05' },
+	{ id: 6, name: '価格', href: 'block-06' },
 ];
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
+
+	const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+		e.preventDefault();
+		const element = document.getElementById(id);
+		element?.scrollIntoView({
+			behavior: 'smooth'
+		});
+		setIsOpen(false);
+	}
 
 	useEffect(() => {
 		document.documentElement.classList.toggle("js-locked", isOpen);
@@ -46,7 +55,7 @@ const Header = () => {
 							{
 								NAV_ITEMS.map((item) => (
 									<li key={item.id} className="header-nav__menu-item">
-										<a href={item.href} className="js-scroll">{item.name}</a>
+										<a href={`#${item.href}`} onClick={(e) => scrollToSection(e, item.href)} className="js-scroll">{item.name}</a>
 									</li>
 								))
 							}

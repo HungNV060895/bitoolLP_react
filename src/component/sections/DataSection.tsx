@@ -6,18 +6,14 @@ import { useEqualHeight } from "@/hooks/useEqualHeight";
 
 
 type PropType = {
-    slides: number[]
-    options?: EmblaOptionsType,
-    selected: boolean,
-    index: number,
-    onClick: () => void
+    options?: EmblaOptionsType
 }
 
 const DATADOTS = ['現場担当', '総務担当', '情報システム担当'];
 
 const DataSection = (props: PropType) => {
 
-    const { slides, options, selected, index, onClick } = props
+    const {options} = props
     const [selectedIndex, setSelectedIndex] = useState(0)
     const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options)
     const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
@@ -45,21 +41,6 @@ const DataSection = (props: PropType) => {
 
         emblaMainApi.on('select', onSelect).on('reInit', onSelect)
     }, [emblaMainApi, onSelect]);
-
-
-
-    // const [dataList] = useEmblaCarousel({
-    //     slidesToScroll: 1,
-    //     loop: false,
-    //     breakpoints: {
-    //         '(max-width: 834px)': { axis: 'x' },
-    //     }
-    // });
-
-    // const [dotsList] = useEmblaCarousel({
-    //     slidesToScroll: 3,
-    //     loop: false,
-    // });
 
     const containerRef = useRef<HTMLDivElement>(null);
     useEqualHeight(containerRef, ['.data-list__ttl', '.data-list__ct', '.data-list__note']);
