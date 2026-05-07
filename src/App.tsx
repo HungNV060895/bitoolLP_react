@@ -9,12 +9,12 @@ import CaseSection from "@component/sections/CaseSection";
 import PriceSection from "@component/sections/PriceSection";
 import CtaSection from "@component/sections/CtaSection";
 import ContactSection from "@component/sections/ContactSection";
-import UseEfComponent from "@component/useEffect";
+import UseRefComponent from "./component/useRef";
 
 function App() {
   return (
     <>
-      <UseEfComponent />
+      <UseRefComponent />
       <Header />
       <main id="page-index" className="wrapper">
         <HeroSection />
