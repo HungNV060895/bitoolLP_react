@@ -1,21 +1,29 @@
-import { useEffect, memo, useState } from "react";
+import { useEffect, memo, useState, useCallback } from "react";
 import Content from "./content";
 
-const UseMemoComponent = () => {
+interface Props {
+    //count: number;
+    increase: () => void;
+}
+
+
+const UseMemoComponent = (prop: Props) => {
     const [count, setCount] = useState(0);
 
-    const increase = () => {
-        setCount(count + 1);
-    }
+    // Sử dụng useCallback để memoize hàm increase.
+    // Hàm này sẽ chỉ được tạo lại khi các dependency của nó thay đổi.
+    // Vì chúng ta dùng functional update cho setCount, không cần 'count' trong dependency array.
+    const increase = useCallback(() => {
+        setCount(prevCount => prevCount + 1);
+    }, []); // Dependency array rỗng nghĩa là hàm sẽ chỉ được tạo một lần duy nhất.
 
 
     return (
         <>
             <div className="block-test" style={{height:'100vh'}}>
                 <h1 style={{fontSize: '100px', textAlign: 'center'}}>learn react.memo() React</h1>
-                <Content />
+                <Content increase={increase} />
                 {count}
-                <button onClick={increase}>Click Me</button>
             </div>
         </>
     )

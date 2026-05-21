@@ -1,16 +1,19 @@
 
+import {memo} from 'react';
 
-const Content = () => {
-    return(
+interface ContentProps {
+    //count: number;
+    increase: () => void;
+}
+
+const Content = ({ increase }: ContentProps) => {
+    console.log('Re-render');
+    return (
         <>
-            <p className="text-lg text-shadow-lg font-semibold text-gray-800">This is content</p>
-            <div className="bg-gray-50 px-6 py-3 border-t border-gray-200">
-          <p className="text-xs text-gray-400 text-center">
-            Hover vào các phần tử để thấy hiệu ứng
-          </p>
-        </div>
+            <h3>Số count nhận được:</h3>
+            <button className=" border-purple-200 text-purple-600 hover:border-transparent hover:bg-purple-600 hover:text-white active:bg-purple-700 ..." onClick={increase}>Click Me</button>
         </>
     )
 }
 
-export default Content;
+export default memo(Content);
